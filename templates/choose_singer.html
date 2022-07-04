@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>song recommend</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+	
+</head>
+<body style="background-color: aliceblue;">
+
+	<form action="{{url_for('emotion_detect')}}" method="POST">
+		{%if data == "punjabi"%}
+
+		
+		<div class="title">
+			<header class="header">
+				<img src="{{url_for('static', filename='logoo.png')}}" id="imglogo">
+				
+				<h1 >Lets Choose your favourite singer</h1> 
+			</header>
+			<div id="imgcon"><img src="{{url_for('static', filename='top10.png')}}" id="imgc"></div>
+		<h1 class="display-4">Punjabi Singer</h1>
+		
+		</div>
+		<audio src="{{url_for('static', filename='punjabi.mp3')}}" autoplay="autoplay" loop="loop"></audio>
+		<label><input type="radio" name="singer" value="sidhu moosewala"><div class="box">Sidhu</div></label>
+		<label><input type="radio" name="singer" value="amrinder gill"><div class="box">Amrinder</div></label>
+		<br>
+		<label><input type="radio" name="singer" value="karan aujla"><div class="box">Karan Aujla</div></label>
+		<label><input type="radio" name="singer" value="diljit"><div class="box">Diljit</div></label>
+		
+		{%elif data == "english"%}
+
+		<div class="title">
+			<header class="header">
+				<img src="{{url_for('static', filename='logoo.png')}}" id="imglogo">
+				
+				<h1 >Lets Choose your favourite singer</h1> 
+			</header>
+			<div id="imgcon"><img src="{{url_for('static', filename='engtop.jpg')}}" id="imgc"></div>
+		<h1 class="display-4">English singer</h1>
+		</div>
+		<audio src="{{url_for('static', filename='english.mp3')}}" autoplay="autoplay" loop="loop"></audio>
+		<label><input type="radio" name="singer" value="Taylor Swift" ><div class="box">Taylor</div></label>
+		<label><input type="radio" name="singer" value="Justin Bieber"><div class="box">Justin </div></label>
+		<br>
+		<label><input type="radio" name="singer" value="Christina Perri"><div class="box">Christina</div></label>
+		<label><input type="radio" name="singer" value="Miley Cyrus"><div class="box">Miley Cyrus</div></label>
+		
+		{%elif data == "hindi"%}
+		<audio src="{{url_for('static', filename='hindi.mp4')}}" autoplay="autoplay" loop="loop"></audio>
+		<div class="title">
+			<header class="header">
+				<img src="{{url_for('static', filename='logoo.png')}}" id="imglogo">
+				
+				<h1 >Lets Choose your favourite singer</h1> 
+			</header>
+			<div id="imgcon"><img src="{{url_for('static', filename='hinditop.jpeg')}}" id="imgc"></div>
+		<h1 class="display-4">Hindi singer</h1>
+		</div>
+		<label><input type="radio" name="singer" value="Jubin Nautiyal" ><div class="box">Jubin</div></label>
+		<label><input type="radio" name="singer" value="Kumar Sanu"><div class="box">Kumar Sanu</div></label>
+		<br>
+		<label><input type="radio" name="singer" value="Arijit Singh"><div class="box">Arijit Singh</div></label>
+		<label><input type="radio" name="singer" value="Atif Aslam"><div class="box">Atif Aslam</div></label>
+		{%else%}
+		<div class="title">
+			<header class="header">
+				<img src="{{url_for('static', filename='logoo.png')}}" id="imglogo">
+				
+				<h1 >Lets Choose your favourite singer</h1> 
+			</header>
+			<div id="imgcon"><img src="{{url_for('static', filename='tamiltop.jpg')}}" id="imgc"></div>
+			<audio src="{{url_for('static', filename='tamil.mp3')}}" autoplay="autoplay" loop="loop"></audio>
+		<h1 class="display-4">Choose your own singer</h1>
+		
+		</div>
+		<input type="text" name="singer">
+		{%endif%}
+
+		<br>
+		<br>
+		<input type="submit" name="btn" value="NEXT" class="btn btn-outline-success btn-lg">
+	</form>
+
+	
+</body>
+</body>
+</html>
